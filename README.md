@@ -9,8 +9,12 @@ The fast and simple Node manager is just that: fast and simple!
 
 Grab it here - https://github.com/Schniz/fnm
 
-Example commands: 
+Example commands:
 
-fnm list-remote (see all remote versions of node available)
+See all remote versions of node available:
 
-fnm install XX.yy (where X and Y are major and minor versions)
+    fnm list-remote 
+
+Install a particular version of Node:
+
+    fnm install XX.yy (where X and Y are major and minor versions)
