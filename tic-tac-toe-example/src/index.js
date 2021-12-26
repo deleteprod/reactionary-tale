@@ -4,41 +4,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-
-/* This is the more difficult to read version of class Square
-
 class Square extends React.Component {
-  
-  Passing in this.props.value to the button
-  this.props.value is the property passed to the
-  button from the Board class
+  /* Implement requirements for square state tracking */
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: null,
+    };
+  }
 
   render() {
     return (
-      <button className="square" onClick={function() { console.log('click'); }}>
+      /* added in the backticks for console.log to tell *which* square was clicked */
+      <button className="square" onClick={() => console.log(`clicked ${this.props.value}`)}>
         {this.props.value}
       </button>
     );
   }
 }
-
-More difficult version to read of class Square ends */
-
-
-/* Easier to read version of class Square begins (arrow functions) */
-
-class Square extends React.Component {
-
-  render() {
-    return (
-      <button className="square" onClick={() => console.log('click')}>
-        {this.props.value}
-      </button>
-    );
-  }
-}
-
-/* Easier version of class Square ends */
 
 class Board extends React.Component {
   renderSquare(i) {
