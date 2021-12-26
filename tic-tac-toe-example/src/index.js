@@ -15,9 +15,14 @@ class Square extends React.Component {
 
   render() {
     return (
-      /* added in the backticks for console.log to tell *which* square was clicked */
-      <button className="square" onClick={() => console.log(`clicked ${this.props.value}`)}>
-        {this.props.value}
+      
+      <button className="square"
+      /* added in the backticks for console.log to tell *which* square was clicked 
+      onClick={() => console.log(`clicked ${this.props.value}`)}>
+      Still trying to figure out multiple onClick actions */
+      
+      onClick={() => this.setState({value: 'X'})}>
+        {this.state.value}
       </button>
     );
   }
