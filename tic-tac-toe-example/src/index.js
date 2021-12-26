@@ -5,19 +5,44 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 
+/* This is the more difficult to read version of class Square
+
 class Square extends React.Component {
+  
+  Passing in this.props.value to the button
+  this.props.value is the property passed to the
+  button from the Board class
+
   render() {
     return (
-      <button className="square">
-        {/* TODO */}
+      <button className="square" onClick={function() { console.log('click'); }}>
+        {this.props.value}
       </button>
     );
   }
 }
 
+More difficult version to read of class Square ends */
+
+
+/* Easier to read version of class Square begins (arrow functions) */
+
+class Square extends React.Component {
+
+  render() {
+    return (
+      <button className="square" onClick={() => console.log('click')}>
+        {this.props.value}
+      </button>
+    );
+  }
+}
+
+/* Easier version of class Square ends */
+
 class Board extends React.Component {
   renderSquare(i) {
-    return <Square />;
+    return <Square value={i} />;
   }
 
   render() {
